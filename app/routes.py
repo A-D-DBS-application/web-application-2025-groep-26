@@ -1,8 +1,11 @@
-from flask import Blueprint, request, redirect, url_for, render_template, session
-from .models import db, User, Listing
+from .models import db  
+from flask import Blueprint, render_template
 
 main = Blueprint('main', __name__)
 
 @main.route('/')
 def index():
-    return "Hello Flask!"
+    return render_template('index.html')
+@main.route('/klassement')
+def klassement():
+    return render_template('klassement.html')
